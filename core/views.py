@@ -25,10 +25,14 @@ def home(request):
     return render(request,'core/index.html',context)
 
 def artistas(request):
-    return render(request,'core/artistas.html')
+    artistas=Artista.objects.all()
+    context={"arte":artistas}
+    return render(request,'core/artistas.html',context)
 
 def galeria(request):
-    return render(request,'core/galeria.html')
+    galeria=Obras.objects.all()
+    context={"galeria":galeria}
+    return render(request,'core/galeria.html',context)
 
 def obra_detail_view(request,id):
     try:

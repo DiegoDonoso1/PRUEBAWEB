@@ -17,6 +17,6 @@ urlpatterns = [
     path('modificarObra/<id>/',modificar_Obra, name="modificarObra"),
     path('eliminarObra/<id>/',eliminar_obra, name="eliminarObra"),
     path('registro/',registro,name="registro"),
-    path('detalleObra/<id>/',obra_detail_view,name="detalleObra")
+    path('galeria/detalleObra/<id>/',obra_detail_view,name="detalleObra")
     
 ]

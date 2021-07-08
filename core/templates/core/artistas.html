@@ -4,86 +4,23 @@
     <main>
         <p class="text-center display-4 fw-bold mt-4">Artistas</p>
         <div class="contenedor_general_tarjeta mt-0">
+            {% for i in arte %}
             <div class="contenedor_tarjeta">
-                <a href="Artistas/Pagina_artista_escultura.html">
+                <a href="#">
                     <figure id="tarjeta">         
-                            <img src="img/fotos-artistas/Alejandro_Escribano_foto.jpg" class="frontal" alt="">
+                            <img src="{{ i.imagenArtista.url }}" class="frontal" alt="">
                         <figcaption class="trasera">
-                            <h2 class="titulo">Alejandro-Escribano escultura -1958</h2>
+                            <h2 class="titulo">{{i.nombreArtista}}</h2>
                             <hr>
-                            <p>Este escultor y ceramista, se ha dedicado a la investigación en la línea del modelado y la riqueza de formas que permite la materia.</p>
+                            <p>{{ i.descripcionArtista }}</p>
                         </figcaption>
                     </figure>
                 </a>
             </div>
+
+            {% endfor %}
     
-            <div class="contenedor_tarjeta">
-                <a href="Artistas/Pagina_artistica_serigrafía.html">
-                    <figure id="tarjeta">
-                            <img src="img/fotos-artistas/Lucius_Fox_foto.jpg" class="frontal" alt="">
-                        <figcaption class="trasera">
-                            <h2 class="titulo">Lucius Fox-Serigrafía -1943 </h2>
-                            <hr>
-                            <p>El artista es internacionalmente reconocido por sus pinturas y esculturas cuadriculares de los años 1960 en adelante, las cuales juegan con la posición de sus espectadores para provocar efectos ilusorios de profundidad y movimiento.</p>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
-    
-            <div class="contenedor_tarjeta">
-                <a href="Artistas/Pagina_artistica_collage.html">
-                    <figure id="tarjeta">
-                            <img src="img/fotos-artistas/Loreto_Foeldes_foto.jpg" class="frontal" alt="">               
-                        <figcaption class="trasera">
-    
-                                <h2 class="titulo">Loreto Foeldes-Collage -1978</h2>
-                                <hr>
-                                <p>Loreto Foeldes  ha sabido encontrar en el arte conceptual, un medio de reflexión para todo aquel que contempla sus obras, ya sean sus conocidas siluetas o sus esculturas.</p>
-                            
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
-    
-            <div class="contenedor_tarjeta">
-                <a href="Artistas/Pagina_artista_litografia.html">
-                    <figure id="tarjeta">  
-                            <img src="img/fotos-artistas/Daniel_Schachner_foto.jpg" class="frontal" alt="">
-                        <figcaption class="trasera">
-                            <h2 class="titulo">Daniel Schachner-Litografía-1985</h2>
-                            <hr>
-                            <p>Su sed de creatividad lo ha llevado a liderar agencias en Europa, América Latina y EE.UU., y a ganar importantes premios para los clientes con los que ha estado, gracias a la tecnica de la litografia.</p>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
-    
-            <div class="contenedor_tarjeta">
-                <a href="Artistas/Pagina_artistica_grabado.html">
-                    <figure id="tarjeta">                                   
-                         <img src="img/fotos-artistas/Andres_vio_foto.jpg" class="frontal" alt="">                 
-                        <figcaption class="trasera">
-                            <h2 class="titulo">Andres Vio-Grabado -1978</h2>
-                            <hr>
-                            <p>Su trabajo como artista se centra casi exclusivamente en el grabado, disciplina a partir de la cual desarrollo un cuerpo de pensamiento y una metodología de enseñanza que transmite a sus estudiantes.</p>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
-    
-            <div class="contenedor_tarjeta">
-                <a href="Artistas/Pagina_artista_acrilico.html">
-                    <figure id="tarjeta">
-                        <img src="img/fotos-artistas/William_Smith_foto.jpg" class="frontal" alt="">
-                        <figcaption class="trasera">
-                            <h2 class="titulo">William Smith-Acrílico - 1991</h2>
-                            <hr>
-                            <p> Sus intereses artísticos van desde la plástica al sofisticado mundo del jazz, se caracteriza por llevar a cabo una serie de proyectos en forma simultánea pasando por la pintura, fotografía a video arte. Su pintura, llama la atención su extravagancia, son su sello.</p>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
-        </div>
+            
     </main>
 
     {% endblock %} 
