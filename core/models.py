@@ -4,7 +4,7 @@ from django.db import models
 class Categoria(models.Model):
     idCategoria = models.IntegerField(primary_key=True,verbose_name="Id de Categoria")
     nombreCategoria = models.CharField(max_length=50,verbose_name="Nombre de la categoria")
-    imagenCategoria = models.ImageField(null=True,blank=True)
+    imagenCategoria = models.ImageField(null=True,blank=True,default='default.jpg')
     descripcionCategoria = models.CharField(null=True,blank=True,max_length=500,verbose_name="Descripcion del arte")
     def __str__(self):
         return self.nombreCategoria
@@ -27,6 +27,6 @@ class Artista(models.Model):
     fecha_nacimiento=models.DateTimeField(verbose_name="fecha nacimiento")
     descripcionArtista= models.CharField(max_length=500,verbose_name="Descripcion artista")
     obra= models.ForeignKey(Obras,on_delete=models.CASCADE)
-    imagenArtista = models.ImageField(null=True,blank=True)
+    imagenArtista = models.ImageField(null=True,blank=True,default='default.jpg')
     def __str__(self):
         return self.nombreArtista

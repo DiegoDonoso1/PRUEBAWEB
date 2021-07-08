@@ -9,154 +9,21 @@
     <div class="container my-4">
         <div class="row row-cols-1 row-cols-md-3 g-4 ">
 
+            {% for i in galeria %}
             <div class="col">
                 <div class="card text-center ">
-                    <img src="/img/img-artistas/Fotos_Galeria/Alejandro Escribano/El Silencio/Alejandro_Escribano_escultura1.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: El silencio <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artista_escultura.html">Alejandro Escribano</a>.</p>
+                    <img src="{{i.imagen.url}}" alt="" class="card-img-top">
+                    <p class="Pgaleria lead">{{i.autorObra}}<br> Obra:
+                    <a  class="colorA" href="detalleObra/{{ i.idObra }}/">{{i.nombreObra}}</a></p>
                 </div>
             </div>
+            {% endfor %}
 
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/William Smith/DeepNight/William_Smith_acrilico2.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: DeepNight <br> Artista:
-                    <a class="colorA" href="/Artistas/Pagina_artista_acrilico.html">William Smith</a>.</p>
-                </div>
-                
-                
-            </div>
-
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/Daniel Schachner/Travel/Daniel_Schachner_litografía1.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Travel <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artista_litografia.html">Daniel Schachner</a>.</p>     
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/Andres Vio/Fate/Andres_Vio_grabado1.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Fate <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artistica_grabado.html">Andres Vio</a>.</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/Loreto Foeldes/Split/Loreto_Foeldes_collage2.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Split <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artistica_collage.html">Loreto Foeldes</a>.</p>  
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/Lucius Fox/Excessus/Lucius_Fox_serigrafía1.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Excessus <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artistica_serigrafía.html">Lucius Fox</a>.</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/Lucius Fox/Hail to the King/Lucius_Fox_serigrafía3.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Hail to the King <br> Artista:
-                    <a class="colorA" href="/Artistas/Pagina_artistica_serigrafía.html">Lucius Fox</a>.</p>
-                </div>
-            </div>
             
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/Daniel Schachner/Neolito/Daniel_Schachner_litografía3.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Neolito <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artista_litografia.html">Daniel Schachner</a>.</p>  
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/Alejandro Escribano/Neolatino/Alejandro_Escribano_escultura2.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Neolatino <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artista_escultura.html">Alejandro Escribano</a>.</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/Andres Vio/Pollinis/Andres_Vio_grabado3.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Pollinis <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artistica_grabado.html">Andres Vio</a>.</p> 
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/Loreto Foeldes/Peludo Paint/Loreto_Foeldes_collage1.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Peludo Paint <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artistica_collage.html">Loreto Foeldes</a>.</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/William Smith/ColorFull/William_Smith_acrilico1.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: ColorFull <br> Artista:
-                    <a class="colorA" href="/Artistas/Pagina_artista_acrilico.html">William Smith</a>.</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/Loreto Foeldes/Misce/Loreto_Foeldes_collage3.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Misce <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artistica_collage.html">Loreto Foeldes</a>.</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/Lucius Fox/Fugatur Vita/Lucius_Fox_serigrafía2.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Fugatur Vita <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artistica_serigrafía.html">Lucius Fox</a>.</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">
-                    <img src="./img/img-artistas/Fotos_Galeria/Daniel Schachner/Flora/Daniel_Schachner_litografía2.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Flora <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artista_litografia.html">Daniel Schachner</a>.</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">  
-                    <img src="./img/img-artistas/Fotos_Galeria/Andres Vio/Magno/Andres_Vio_grabado2.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Magno <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artistica_grabado.html">Andres Vio</a>.</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">     
-                    <img src="./img/img-artistas/Fotos_Galeria/William Smith/CrazyHead/William_Smith_acrilico3.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: CrazyHead <br> Artista:
-                    <a class="colorA" href="/Artistas/Pagina_artista_acrilico.html">William Smith</a>.</p>  
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card text-center">               
-                    <img src="./img/img-artistas/Fotos_Galeria/Alejandro Escribano/Libertatem/Alejandro_Escribano_escultura3.jpg" alt="" class="card-img-top">
-                    <p class="Pgaleria lead">Nombre: Libertatem <br> Artista:
-                    <a  class="colorA" href="/Artistas/Pagina_artista_escultura.html">Alejandro Escribano</a>.</p>
-                </div>
-            </div>
 
         </div>
     </div>
+
     </main>
     
     {% endblock %}

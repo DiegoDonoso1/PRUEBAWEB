@@ -25,7 +25,10 @@ class CategoriaAdmin(admin.ModelAdmin):
         return format_html('<img src={} width="200" height="200"  />',obj.imagenCategoria.url)
 
 class ArtistaAdmin(admin.ModelAdmin):
-    list_display=("idArtista","nombreArtista","descripcionArtista")
+    list_display=("idArtista","nombreArtista","descripcionArtista",'Photo')
+
+    def Photo(self,obj):
+        return format_html('<img src={} width="200" height="200"  />',obj.imagenArtista.url)
 
 
 admin.site.register(Categoria,CategoriaAdmin)
