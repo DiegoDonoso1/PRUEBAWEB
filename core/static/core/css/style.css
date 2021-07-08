@@ -1,0 +1,272 @@
+:root{
+    --primary: #734A43;
+    --dark: #000000;
+    --danger:#333333;
+    --info:#F5F5F5; 
+}
+ 
+.separador{
+    height: 300px;
+}
+
+
+.tamaño{
+    height: 1000px;
+}
+
+
+@media (max-width:992px){
+    section{
+        height: unset;
+    }
+    .navbar{
+        position: relative !important;
+    }
+}
+
+.btn-primary{
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+.btn-primary:hover{
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.bg-primary{
+    background-color: var(--primary) !important;
+}
+.text-primary{
+    color:var(--primary) !important;
+}
+.bg-danger{
+    background-color:var(--danger) !important;
+}
+.bg-info{
+    background-color: var(--info)!important;
+}
+.bg-dark{
+    background-color: var(--dark)!important;
+}
+
+* {
+	margin:0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #F0F2F1;
+	font-family: 'Open Sans', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.contenedor_general_tarjeta {
+	max-width: 1200px;
+	margin:50px auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.contenedor_tarjeta {
+	margin: 20px;
+}
+
+.contenedor_tarjeta a {
+	display: inline-block;
+}
+
+.contenedor_tarjeta:hover figure {
+	transform: perspective(600px) rotateY(180deg);
+	-webkit-box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.25);
+	box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.25);
+}
+
+.contenedor_tarjeta:hover figure img {
+	/* Si queremos podemos aplicar un efecto blur a nuestra imagen al girar */
+	/*filter:blur(2px);*/
+}
+
+figure {
+	width: 300px;
+	height: 350px;
+	margin:0;
+	position: relative;
+	transition: all ease .5s;
+	transform-style: preserve-3d;
+	/* Nota:
+		Establecemos que la imagen tendra una rotacion de 0grados al inicio porque si no
+		ponemos esta propiedad nos da un poco de problemas en algunos navegadores al pasar el cursor.
+	*/
+	transform: perspective(600px) rotateY(0deg);
+}
+
+figure .frontal,
+figure .trasera {
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	transition: all ease .5s;
+}
+
+figure .frontal {
+	display: block;
+	background: #000;
+
+	/* Podemos ocultar la imagen al da la vuelta si lo queremos */
+	/*backface-visibility: hidden;*/
+}
+
+figure .trasera {
+	position: absolute;
+	top: 0;
+	padding: 20px;
+	color: #fff;
+	transform: perspective(600px) rotateY(180deg);
+	backface-visibility: hidden;
+	overflow: auto;
+}
+
+.contenedor_tarjeta:nth-child(1) figure .trasera{
+	background: rgba(144,164,153,0.79);
+	background: -moz-linear-gradient(top, rgba(144,164,153,0.79) 15%, rgba(182,156,123,0.79) 33%, rgba(186,155,120,0.79) 35%, rgba(226,230,219,0.81) 70%, rgba(206,210,200,0.81) 73%, rgba(58,64,57,0.81) 95%);
+	background: -webkit-gradient(left top, left bottom, color-stop(15%, rgba(144,164,153,0.79)), color-stop(33%, rgba(182,156,123,0.79)), color-stop(35%, rgba(186,155,120,0.79)), color-stop(70%, rgba(226,230,219,0.81)), color-stop(73%, rgba(206,210,200,0.81)), color-stop(95%, rgba(58,64,57,0.81)));
+	background: -webkit-linear-gradient(top, rgba(144,164,153,0.79) 15%, rgba(182,156,123,0.79) 33%, rgba(186,155,120,0.79) 35%, rgba(226,230,219,0.81) 70%, rgba(206,210,200,0.81) 73%, rgba(58,64,57,0.81) 95%);
+	background: -o-linear-gradient(top, rgba(144,164,153,0.79) 15%, rgba(182,156,123,0.79) 33%, rgba(186,155,120,0.79) 35%, rgba(226,230,219,0.81) 70%, rgba(206,210,200,0.81) 73%, rgba(58,64,57,0.81) 95%);
+	background: -ms-linear-gradient(top, rgba(144,164,153,0.79) 15%, rgba(182,156,123,0.79) 33%, rgba(186,155,120,0.79) 35%, rgba(226,230,219,0.81) 70%, rgba(206,210,200,0.81) 73%, rgba(58,64,57,0.81) 95%);
+	background: linear-gradient(to bottom, rgba(144,164,153,0.79) 15%, rgba(182,156,123,0.79) 33%, rgba(186,155,120,0.79) 35%, rgba(226,230,219,0.81) 70%, rgba(206,210,200,0.81) 73%, rgba(58,64,57,0.81) 95%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90a499', endColorstr='#3a4039', GradientType=0 );
+}
+
+.contenedor_tarjeta:nth-child(2) figure .trasera{
+	background: rgba(251,232,202,0.7);
+	background: -moz-linear-gradient(top, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(251,232,202,0.7)), color-stop(100%, rgba(25,44,72,1)));
+	background: -webkit-linear-gradient(top, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	background: -o-linear-gradient(top, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	background: -ms-linear-gradient(top, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	background: linear-gradient(to bottom, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbe8ca', endColorstr='#192c48', GradientType=0 );
+}
+
+.contenedor_tarjeta:nth-child(3) figure .trasera{
+	background: rgba(128,183,227,0.79);
+	background: -moz-linear-gradient(top, rgba(128,183,227,0.79) 15%, rgba(26,49,74,0.79) 33%, rgba(15,34,57,0.79) 35%, rgba(12,50,104,0.81) 70%, rgba(35,66,108,0.81) 73%, rgba(204,184,141,0.81) 95%);
+	background: -webkit-gradient(left top, left bottom, color-stop(15%, rgba(128,183,227,0.79)), color-stop(33%, rgba(26,49,74,0.79)), color-stop(35%, rgba(15,34,57,0.79)), color-stop(70%, rgba(12,50,104,0.81)), color-stop(73%, rgba(35,66,108,0.81)), color-stop(95%, rgba(204,184,141,0.81)));
+	background: -webkit-linear-gradient(top, rgba(128,183,227,0.79) 15%, rgba(26,49,74,0.79) 33%, rgba(15,34,57,0.79) 35%, rgba(12,50,104,0.81) 70%, rgba(35,66,108,0.81) 73%, rgba(204,184,141,0.81) 95%);
+	background: -o-linear-gradient(top, rgba(128,183,227,0.79) 15%, rgba(26,49,74,0.79) 33%, rgba(15,34,57,0.79) 35%, rgba(12,50,104,0.81) 70%, rgba(35,66,108,0.81) 73%, rgba(204,184,141,0.81) 95%);
+	background: -ms-linear-gradient(top, rgba(128,183,227,0.79) 15%, rgba(26,49,74,0.79) 33%, rgba(15,34,57,0.79) 35%, rgba(12,50,104,0.81) 70%, rgba(35,66,108,0.81) 73%, rgba(204,184,141,0.81) 95%);
+	background: linear-gradient(to bottom, rgba(128,183,227,0.79) 15%, rgba(26,49,74,0.79) 33%, rgba(15,34,57,0.79) 35%, rgba(12,50,104,0.81) 70%, rgba(35,66,108,0.81) 73%, rgba(204,184,141,0.81) 95%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80b7e3', endColorstr='#ccb88d', GradientType=0 );
+}
+.contenedor_tarjeta:nth-child(4) figure .trasera{
+	background: rgba(134,102,67,0.78);
+	background: -moz-linear-gradient(top, rgba(134,102,67,0.78) 8%, rgba(107,80,62,0.78) 21%, rgba(83,60,57,0.81) 33%, rgba(61,49,47,0.89) 62%, rgba(166,170,161,0.96) 91%, rgba(198,207,196,0.96) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(8%, rgba(134,102,67,0.78)), color-stop(21%, rgba(107,80,62,0.78)), color-stop(33%, rgba(83,60,57,0.81)), color-stop(62%, rgba(61,49,47,0.89)), color-stop(91%, rgba(166,170,161,0.96)), color-stop(100%, rgba(198,207,196,0.96)));
+	background: -webkit-linear-gradient(top, rgba(134,102,67,0.78) 8%, rgba(107,80,62,0.78) 21%, rgba(83,60,57,0.81) 33%, rgba(61,49,47,0.89) 62%, rgba(166,170,161,0.96) 91%, rgba(198,207,196,0.96) 100%);
+	background: -o-linear-gradient(top, rgba(134,102,67,0.78) 8%, rgba(107,80,62,0.78) 21%, rgba(83,60,57,0.81) 33%, rgba(61,49,47,0.89) 62%, rgba(166,170,161,0.96) 91%, rgba(198,207,196,0.96) 100%);
+	background: -ms-linear-gradient(top, rgba(134,102,67,0.78) 8%, rgba(107,80,62,0.78) 21%, rgba(83,60,57,0.81) 33%, rgba(61,49,47,0.89) 62%, rgba(166,170,161,0.96) 91%, rgba(198,207,196,0.96) 100%);
+	background: linear-gradient(to bottom, rgba(134,102,67,0.78) 8%, rgba(107,80,62,0.78) 21%, rgba(83,60,57,0.81) 33%, rgba(61,49,47,0.89) 62%, rgba(166,170,161,0.96) 91%, rgba(198,207,196,0.96) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#866643', endColorstr='#c6cfc4', GradientType=0 );
+	
+}
+.contenedor_tarjeta:nth-child(5) figure .trasera{
+	background: rgba(207,191,177,0.78);
+	background: -moz-linear-gradient(top, rgba(207,191,177,0.78) 8%, rgba(175,145,122,0.78) 21%, rgba(146,103,71,0.81) 33%, rgba(105,68,51,0.89) 62%, rgba(45,33,29,0.96) 91%, rgba(27,22,22,0.96) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(8%, rgba(207,191,177,0.78)), color-stop(21%, rgba(175,145,122,0.78)), color-stop(33%, rgba(146,103,71,0.81)), color-stop(62%, rgba(105,68,51,0.89)), color-stop(91%, rgba(45,33,29,0.96)), color-stop(100%, rgba(27,22,22,0.96)));
+	background: -webkit-linear-gradient(top, rgba(207,191,177,0.78) 8%, rgba(175,145,122,0.78) 21%, rgba(146,103,71,0.81) 33%, rgba(105,68,51,0.89) 62%, rgba(45,33,29,0.96) 91%, rgba(27,22,22,0.96) 100%);
+	background: -o-linear-gradient(top, rgba(207,191,177,0.78) 8%, rgba(175,145,122,0.78) 21%, rgba(146,103,71,0.81) 33%, rgba(105,68,51,0.89) 62%, rgba(45,33,29,0.96) 91%, rgba(27,22,22,0.96) 100%);
+	background: -ms-linear-gradient(top, rgba(207,191,177,0.78) 8%, rgba(175,145,122,0.78) 21%, rgba(146,103,71,0.81) 33%, rgba(105,68,51,0.89) 62%, rgba(45,33,29,0.96) 91%, rgba(27,22,22,0.96) 100%);
+	background: linear-gradient(to bottom, rgba(207,191,177,0.78) 8%, rgba(175,145,122,0.78) 21%, rgba(146,103,71,0.81) 33%, rgba(105,68,51,0.89) 62%, rgba(45,33,29,0.96) 91%, rgba(27,22,22,0.96) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfbfb1', endColorstr='#1b1616', GradientType=0 );
+}
+.contenedor_tarjeta:nth-child(6) figure .trasera{
+	background: rgba(229,221,210,0.92);
+	background: -moz-linear-gradient(top, rgba(229,221,210,0.92) 15%, rgba(143,137,129,0.92) 28%, rgba(43,40,36,0.93) 43%, rgba(148,89,63,0.95) 73%, rgba(171,111,78,0.96) 85%, rgba(191,129,91,0.96) 95%);
+	background: -webkit-gradient(left top, left bottom, color-stop(15%, rgba(229,221,210,0.92)), color-stop(28%, rgba(143,137,129,0.92)), color-stop(43%, rgba(43,40,36,0.93)), color-stop(73%, rgba(148,89,63,0.95)), color-stop(85%, rgba(171,111,78,0.96)), color-stop(95%, rgba(191,129,91,0.96)));
+	background: -webkit-linear-gradient(top, rgba(229,221,210,0.92) 15%, rgba(143,137,129,0.92) 28%, rgba(43,40,36,0.93) 43%, rgba(148,89,63,0.95) 73%, rgba(171,111,78,0.96) 85%, rgba(191,129,91,0.96) 95%);
+	background: -o-linear-gradient(top, rgba(229,221,210,0.92) 15%, rgba(143,137,129,0.92) 28%, rgba(43,40,36,0.93) 43%, rgba(148,89,63,0.95) 73%, rgba(171,111,78,0.96) 85%, rgba(191,129,91,0.96) 95%);
+	background: -ms-linear-gradient(top, rgba(229,221,210,0.92) 15%, rgba(143,137,129,0.92) 28%, rgba(43,40,36,0.93) 43%, rgba(148,89,63,0.95) 73%, rgba(171,111,78,0.96) 85%, rgba(191,129,91,0.96) 95%);
+	background: linear-gradient(to bottom, rgba(229,221,210,0.92) 15%, rgba(143,137,129,0.92) 28%, rgba(43,40,36,0.93) 43%, rgba(148,89,63,0.95) 73%, rgba(171,111,78,0.96) 85%, rgba(191,129,91,0.96) 95%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5ddd2', endColorstr='#bf815b', GradientType=0 );
+}
+
+
+
+
+
+figure .trasera .titulo {
+	color: #fff;
+	font-weight: normal;
+	margin-bottom: 20px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+}
+
+figure .trasera hr {
+	height: 2px;
+	background: #fff;
+	border: none;
+	margin-bottom: 20px;
+	opacity: .5;
+}
+
+figure .trasera p {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 22px;
+	font-size: 14px;
+}
+
+@media screen and (max-width: 992px) { 
+	figure .trasera {
+		/*position: relative;*/
+		backface-visibility:visible;
+		transform: perspective(600px) rotateY(0deg);
+	}
+
+	.contenedor_tarjeta:hover figure {
+		transform: perspective(600px) rotateY(0deg);	
+	}
+
+}
+
+p.Pgaleria{
+	line-height: 1.4;
+  }
+  
+  a {
+	outline: none;
+	text-decoration: none;
+	padding: 2px 1px 0;
+  }
+  
+  a .colorA:link {
+	color: #265301;
+  }
+  
+  a.colorA:visited {
+	color: #437A16;
+  }
+  
+  a.colorA:focus {
+	border-bottom: 1px solid;
+	background: #BAE498;
+  }
+  
+  a.colorA:hover {
+	border-bottom: 1px solid;
+	background: #CDFEAA;
+  }
+  
+  a.colorA:active {
+	background: #265301;
+	color: #CDFEAA;
+  }

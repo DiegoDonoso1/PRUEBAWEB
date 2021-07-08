@@ -1,0 +1,146 @@
+{% extends 'core/base.html' %}
+
+
+{% block contenido %}
+
+<section class="tamaño d-flex bg-light bg-info">
+    <div class="container align-self-center  ">
+
+        <div class="row ">
+            <div class="col-lg-12 col-sm-12 col-md-12 d-flex text-center pt-4">
+                <div class="container align-self-center" > 
+                    <small class="d-block text-primary text-center "><span class="badge bg-primary ">
+                        Nuevo
+                    </span>
+                        Subimos obras todos los días
+                    </small>
+                    <h1 class="display-4 fw-bold text-center"> Bienvenidos a nuestra galeria </h1>
+                    <p class="lead  text-center">Nuestras obras destacadas de la semana son :</p>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-sm-12 col-md-12">
+                    <div class="container align-self-center">
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="card bg-primary text-white m-width-100">
+                                        <div class="row g-0">
+                                            {% for n in carusel %}
+                                            <div class="col-md-6 col-lg-6 d-flex">
+                                                <div class="card-body align-self-center">
+                                                    <h5 class="card-title text-center display-6">{{n.nombreObra}}</h5>
+                                                    <p class="card-text text-center lead"> {{n.autorObra}} </p>
+                                                    <p class="card-text text-center"><small class="text-muted"> destacado de la semana del 22 </small></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">                  
+                                                <a href="detalleObra/{{n.idObra}}/">
+                                                   
+                                                    <img src="{{n.imagen.url}}" class="img-fluid" alt="..." width="100%">
+                                                </a>
+                                                
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="card bg-primary text-white m-width-100">
+                                        <div class="row g-0">
+                                            <div class="col-md-12 col-lg-6 d-flex">
+                                                <div class="card-body align-self-center" >
+                                            {% for c2 in carusel2 %}
+                                                    <h5 class="card-title text-center display-6 ">{{c2.nombreObra}}</h5>
+                                                    <p class="card-text text-center lead">{{c2.autorObra}}</p>
+                                                    <p class="card-text text-center"><small class="text-muted">destacado de la semana del 22</small></p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-6">
+                                                <a href="detalleObra/{{c2.idObra}}/">
+                                                    <img src="{{c2.imagen.url}}" alt="..." class="img-fluid" width="100%">
+                                                </a>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="carousel-item">
+                                    <div class="card bg-primary text-white m-width-100">
+                                        <div class="row g-0">
+                                            <div class="col-md-6 d-flex">
+                                                {% for c3 in carusel3 %}
+                                                <div class="card-body align-self-center">
+                                                    <h5 class="card-title text-center display-6">{{c3.nombreObra}}</h5>
+                                                    <p class="card-text text-center lead"> {{c3.autorObra}} </p>
+                                                    <p class="card-text text-center"><small class="text-muted">destacado de la semana del 22</small></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a href="detalleObra/{{c3.idObra}}/">
+                                                    <img src="{{c3.imagen.url}}"alt="..." class="img-fluid" width="100%">
+                                                </a>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                        </div>
+                                </div>
+                               
+                            
+                            
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button> 
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</section >
+<section class="bg-light">
+    <div class="container align-self-center">
+        <div class="row ">
+            <div class="col-lg-12 d-flex separador">
+                <div class="container align-self-center ">
+                    <h2 class="display-4 fw-bold text-center ">Nuestro propósito es derribar barreras</h2>
+                    <p class="lead text-center ">Representamos a artistas emergentes de Chile y el Mundo. Somos un ecosistema donde pueden interactuar artistas y amantes del arte, siempre buscando un trato justo para el artista y el comprador</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main id="categoria" class="bg-info pb-4 ">
+    <div class="text-center py-4"> 
+        <h2 class="display-4 fw-bold" >Categorias</h2>
+    </div>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for categorias in categorias %}
+                <div class="col">
+                    <div class="card border border-dark">
+                        <a href="detalleCategoria/{{categorias.idCategoria}}/" >
+                            <img src="{{categorias.imagenCategoria.url}}" alt="" class="card-img-top rounded">
+                        </a>
+                        <a class="colorA" href="detalleCategoria/{{categorias.idCategoria}}/">
+                            <p class="text-center lead ">{{categorias.nombreCategoria}}</p>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}   
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

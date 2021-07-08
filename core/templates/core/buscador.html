@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/css/style.css'%}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'core/js/js.js'%}"></script>
+    <title>Galeria</title> 
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent pb-2  ">
+        <div class="container">
+            <i class="fas fa-paint-brush mx-2"></i>
+            <a class="navbar-brand fw-bold" href="./index.html">Grupo Cero <span class="text-primary">.</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars lead text-dark"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item d-flex lead">
+                        <a class="nav-link text-dark align-self-center" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item d-flex lead">
+                        <a class="nav-link text-dark align-self-center" aria-current="page" href="galeria.html">Galería</a>
+                    </li>
+                    <li class="nav-item d-flex lead">
+                        <a class="nav-link text-dark align-self-center" aria-current="page" href="Artistas.html">Artistas</a>
+                    </li>
+                    <li class="nav-item d-flex lead">
+                        <a class="nav-link  align-self-center text-dark" href="index.html#categoria">Categorias</a>
+                    </li>
+                    <li class="nav-item d-flex lead">
+                        <a class="nav-link align-self-center text-dark"   href="#nosotros" >Nosotros</a>
+                    </li>
+                    <li class="nav-item me-2 d-flex lead">
+                        <a class="btn align-self-center btn-light" href="#" >Inicia sesión</a>
+                    </li>
+                    <li class="nav-item d-flex lead">
+                        <a class="btn btn-primary align-self-center"  href="#" >Registrate</a>
+                </li>
+                <li class="nav-item d-flex ">
+                    <a class="nav-link text-dark align-self-center" href="./buscador.html">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="alert alert-secondary alert-dismissible fade show text-center" role="alert">
+        <i class="fas fa-info-circle"></i>
+        <strong >Consulte en ingles para una busqueda más precisa</strong> 
+        <button type="button"  data-bs-dismiss="alert" aria-label=""></button>
+    </div> 
+
+    <section >
+
+
+        <nav class="navbar navbar-light bg-light  bg-transparent ">
+            <div class="container- mx-auto my-2" >
+                <div >
+                    <form class="d-flex">
+                      <input id="obras" class="form-control me-2 " type="search" placeholder="Busqueda" aria-label="Busqueda">
+                      <button id="buscar" class="btn btn btn-primary " type="button">Busqueda</button>
+                    </form>
+                </div>
+                </div>
+                </div>
+                </nav>
+                <div class="container text-center my-4">
+    
+                    
+    
+    
+              <div class="form-check form-check-inline mt-4 ">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="escultura" value="option1">
+                  <label class="form-check-label" for="inlineRadio1">Escultura</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pintura" value="option2">
+                  <label class="form-check-label" for="inlineRadio2">Pintura</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Acuarela" value="option3" >
+                  <label class="form-check-label" for="inlineRadio3">Acuarela</label>
+              </div>
+          </div>
+    
+    </section>
+    
+    <main > 
+    <div id="titulo"></div>
+      <div class="container my-4">
+        <div  id="llenar" class="row row-cols-1 row-cols-md-3 g-4 ">
+        </div>
+    </div>
+    </main>
+        <div class="container">
+            <ul class="pagination  ">
+              <li  id="prev" class="page-item  ">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+              <li id="next" class="page-item">
+                <a id="enlace" class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+        </div>
+
+        <section class="bg-light">
+            <div class="container align-self-center">
+                <div class="row ">
+                    <div class="col-lg-12 d-flex separador">
+                        <div class="container align-self-center ">
+                            <h2 class="display-4 fw-bold text-center ">Nuestro propósito es derribar barreras</h2>
+                            <p class="lead text-center ">Representamos a artistas emergentes de Chile y el Mundo. Somos un ecosistema donde pueden interactuar artistas y amantes del arte, siempre buscando un trato justo para el artista y el comprador</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    
+        
+        
+    
+    
+    
+    <footer id="nosotros" class="text-light bg-danger text-lg-start  ">
+        <div class="container pt-4 ">
+            <div class="row ">
+                <div class="col-lg-6  mb-4 mb-md-0 p-2">
+                  <h5 class="display-6 fw-bold ">Grupo Cero</h5>
+                  <p class="lead">
+                    "Nos dedicamos como grupo artístico en expresar nuestros sentimientos 
+                    en forma de obras como por ejemplo el acrílico, la escultura, la litografía, etc.
+                    Con nuestros colegas exponemos nuestros trabajos para inspirar a demás gente y lograr construir
+                    una comunidad artística, donde cualquier persona que se registre puede compartir su arte por medio
+                    de nuestra página."
+                  </p>
+                </div>
+                <div class="col-lg-6  mb-4 mb-md-0 align-self-center ">
+                    <div class="container ">
+                        <div class="text-center ">
+                            <a class="btn btn-primary" style="background-color: #3b5998;" href="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i> </a>
+                            <a class="btn btn-primary" style="background-color: #55acee;" href="https://twitter.com/"> <i class="fab fa-twitter"></i> </a>
+                            <a class="btn btn-primary" style="background-color: #dd4b39;" href="https://translate.google.cl/"> <i class="fab fa-google"></i> </a>
+                            <a class="btn btn-primary" style="background-color: #ac2bac;" href="https://www.instagram.com/"> <i class="fab fa-instagram"></i> </a>
+                            <a class="btn btn-primary" style="background-color: #0082ca;" href="https://cl.linkedin.com/"> <i class="fab fa-linkedin-in"></i> </a>
+                            <a class="btn btn-primary" style="background-color: #333333;" href="https://github.com/DiegoDonoso1/Grupo-cero-Artistas"  ><i class="fab fa-github"></i> </a>
+                            <p class="mt-4" id="tiempo"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-4 bg-dark" >
+          © 2020 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">GrupoCero.cl</a>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+   
+  </body>
+</html>

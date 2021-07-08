@@ -1,0 +1,36 @@
+{% extends "core/base.html" %}
+
+{% block contenido %}
+
+  
+<br><br>
+  <div class="container">
+   
+    <div class="row">
+      <div class="col-md-6">
+          <img src="{{nombreO.imagen.url}}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-6">
+            
+            <h1 class="card-title text-center">{{nombreO.nombreObra}}</h1>
+            <hr>
+            <h4 class="text-center load"> <b>Autor: <b> {{nombreO.autorObra}}</h4>
+            <hr>
+            <div class="align-middle mt-4 pt-4 lead text-center">
+              {{nombreO.descripcion}}
+            </div>
+        </div>
+        <br><br><br>
+            
+        
+    </div>
+    <br><br>
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+        
+
+
+      </div>
+    </div>
+</div> 
+  
+{% endblock %}
